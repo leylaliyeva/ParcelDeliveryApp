@@ -1,4 +1,5 @@
 Parcel Delivery App
+
 This project is a Parcel Delivery Application with a microservices architecture. It consists of multiple services managed by an API Gateway implemented with Ocelot and is containerized for ease of deployment and testing.
 The Parcel Delivery App is designed to provide core functionality for parcel management, including user registration, parcel tracking, and order assignment. It supports the following roles:
 
@@ -13,30 +14,9 @@ The project uses a microservices architecture with the following main components
 Auth Service: Manages user authentication and registration.
 Order Service: Manages parcel orders, allowing users to create, view, and modify orders.
 Tracking Service: Allows admins to track parcels and assign orders to couriers.
-API Gateway (Ocelot): Serves as the entry point, directing requests to the appropriate services.
-Here’s the directory structure:
 
-plaintext
-Copy code
-ParcelDeliveryApp/
-├── ApiGateway/
-│   ├── ocelot.json       # Ocelot configuration file for routing
-│   └── Program.cs        # .NET entry point
-│   └── appsettings.json  # Gateway configuration
-├── AuthService/
-│   └── Controllers/
-│   └── Program.cs
-│   └── appsettings.json
-├── OrderService/
-│   └── Controllers/
-│   └── Program.cs
-│   └── appsettings.json
-├── TrackingService/
-│   └── Controllers/
-│   └── Program.cs
-│   └── appsettings.json
-└── docker-compose.yml    # Docker Compose for all services
-Microservices
+API Gateway (Ocelot): Serves as the entry point, directing requests to the appropriate services.
+
 Auth Service
 Handles authentication and authorization for Users, Admins, and Couriers.
 
@@ -52,6 +32,7 @@ POST /orders - Creates a new order.
 PATCH /orders/{id}/status - Allows Admin to change the status of an order.
 PATCH /orders/{id}/destination - Allows the user to change the destination (under certain conditions).
 DELETE /orders/{id} - Allows the user to cancel an order (under certain conditions).
+
 Tracking Service
 Handles tracking of orders and assignment of couriers.
 
@@ -65,34 +46,18 @@ The API Gateway, built with Ocelot, routes incoming requests to the appropriate 
 Example route configuration in ocelot.json:
 
 json
-Copy code
-{
-  "Routes": [
-    {
-      "DownstreamPathTemplate": "/auth/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        { "Host": "auth-service", "Port": 80 }
-      ],
-      "UpstreamPathTemplate": "/api/auth/{everything}",
-      "UpstreamHttpMethod": [ "POST", "GET" ]
-    }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5000"
-  }
-}
-Getting Started
+
 Prerequisites
 .NET 8 SDK
 Docker
 Docker Compose
 Installation
+
 Clone the repository:
 
 bash
 Copy code
-git clone <repository-url>
+git clone 
 cd ParcelDeliveryApp
 Build and run the services with Docker Compose:
 
