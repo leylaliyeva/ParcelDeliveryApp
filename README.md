@@ -43,9 +43,6 @@ GET /tracking/couriers - Retrieves a list of all couriers with their statuses.
 API Gateway
 The API Gateway, built with Ocelot, routes incoming requests to the appropriate microservices. The routing configuration is specified in ocelot.json, which includes route templates and service host information.
 
-Example route configuration in ocelot.json:
-
-json
 
 Prerequisites
 .NET 8 SDK
