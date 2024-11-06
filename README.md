@@ -82,3 +82,23 @@ PATCH http://localhost:5000/api/orders/{id}/status (Admin changes order status)
 Tracking Service:
 
 GET http://localhost:5000/api/tracking/orders/{id} (Admin tracks an order by ID)
+
+
+-----------------------------------------------------------------------------
+
+Pending or Undone Functionalities
+Order Modification:
+
+Conditions for when Users can change order destinations still need to be defined and implemented.
+Tracking Enhancements:
+
+Live Tracking: The ability for Users or Admins to view live location tracking of deliveries is currently not implemented. For simplicity, this feature may remain as coordinate updates only, but live tracking could be added in future updates if required.
+Containerization Enhancements:
+
+Additional configuration for more robust networking between services in Docker may be added, especially if scaling or distributed deployment is planned.
+Testing:
+
+More comprehensive unit and integration tests for each service are planned, especially for edge cases in order creation, assignment, and cancellation.
+API Gateway Security:
+
+Basic JWT authentication is in place, but additional security measures, such as rate limiting or logging, may be added to the API Gateway.
