@@ -10,7 +10,7 @@ The app’s microservices are independently deployable, and all routing is manag
 
 Architecture
 The project uses a microservices architecture with the following main components:
-![image](https://github.com/user-attachments/assets/07fba30d-5aa6-47de-94ef-a7bb20c72b7d)
+![image](https://github.com/user-attachments/assets/02d1dafc-8921-4269-b179-c8cb7c9e50f3)
 
 
 Auth Service: Manages user authentication and registration.
